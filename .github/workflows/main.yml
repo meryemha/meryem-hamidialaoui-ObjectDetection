@@ -48,4 +48,4 @@ jobs:
 
       # Étape 3 : Publier le projet console en mode autonome
       - name: Publish console app
-        run: dotnet publish VotrePrénom.VotreNom.ObjectDetection.Console --configuration Release --output ./publish --self-contained --runtime win10-x64
+        run: dotnet publish meryem.hamidialaoui.ObjectDetection.Console --configuration Release --output ./publish --self-contained --runtime win10-x64
