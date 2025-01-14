@@ -1,0 +1,14 @@
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\bin\Debug\net8.0\Yolo.cs
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\bin\Debug\net8.0\TinyYolo2_model.onnx
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\bin\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.deps.json
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\bin\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.dll
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\bin\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.pdb
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.csproj.AssemblyReference.cache
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.AssemblyInfoInputs.cache
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.AssemblyInfo.cs
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.csproj.CoreCompileInputs.cache
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.dll
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\refint\meryem.hamidialaoui.ObjectDetection.dll
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\meryem.hamidialaoui.ObjectDetection.pdb
+C:\Users\merye\meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection\obj\Debug\net8.0\ref\meryem.hamidialaoui.ObjectDetection.dll
