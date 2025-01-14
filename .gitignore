@@ -8,6 +8,3 @@ obj/
 # Ignore les fichiers temporaires
 *.tmp
 *.bak
-
-# Ignore les fichiers ONNX (si vous ne voulez pas les inclure dans le dépôt)
-*.onnx
