@@ -1,1 +1,13 @@
-﻿
+﻿# Fichiers de build
+bin/
+obj/
+
+# Fichiers de configuration utilisateur
+*.user
+*.suo
+
+# Logs et caches
+*.log
+.vs/
+.idea/
+.vscode/
