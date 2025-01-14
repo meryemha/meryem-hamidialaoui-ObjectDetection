@@ -9,30 +9,32 @@ on:
       - main
 
 jobs:
+  
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      # Étape 1 : Cloner le dépôt
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      # Étape 2 : Installer le SDK .NET
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.x
-          
+          dotnet-version: '8.0.x'
+
       - name: Install dependencies for System.Drawing
         run: sudo apt-get install -y libgdiplus
 
-      # Étape 3 : Restaurer les dépendances
-      - name: Restore dependencies
+      - name: Install dependencies
         run: dotnet restore
 
-      # Étape 4 : Build et tests
-      - name: Build and test
-        run: dotnet build && dotnet test
+      - name: Build
+        run: dotnet build --configuration Release
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+
+  
+      
 
   publish:
     runs-on: ubuntu-latest
