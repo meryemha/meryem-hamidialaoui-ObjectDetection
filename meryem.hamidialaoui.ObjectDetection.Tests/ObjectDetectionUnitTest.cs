@@ -23,11 +23,27 @@ public class ObjectDetectionUnitTest
         var detectObjectInScenesResults = await new ObjectDetection().DetectObjectInScenesAsync(imageScenesData);
 
         
-        Assert.Equal("{\"Dimensions\":{\"X\":0,\"Y\":0,\"Height\":2,\"Width\":2},\"Label\":\"Car\",\"Confidence\":0.5}", 
-            JsonSerializer.Serialize(detectObjectInScenesResults[0].Box));
+        Assert.Equal("chair", detectObjectInScenesResults[0].Box[0].Label);
+        Assert.InRange(detectObjectInScenesResults[0].Box[0].Confidence, 0.9, 1.0);
+        Assert.InRange(detectObjectInScenesResults[0].Box[0].Dimensions.X, 90, 100);
+        Assert.InRange(detectObjectInScenesResults[0].Box[0].Dimensions.Y, 130, 140);
+        Assert.InRange(detectObjectInScenesResults[0].Box[0].Dimensions.Width, 220, 230);
+        Assert.InRange(detectObjectInScenesResults[0].Box[0].Dimensions.Height, 260, 270);
 
-        Assert.Equal("{\"Dimensions\":{\"X\":0,\"Y\":0,\"Height\":2,\"Width\":2},\"Label\":\"Car\",\"Confidence\":0.5}", 
-            JsonSerializer.Serialize(detectObjectInScenesResults[1].Box));
+        // Vérifie les propriétés du second résultat
+        Assert.Equal("car", detectObjectInScenesResults[1].Box[0].Label);
+        Assert.InRange(detectObjectInScenesResults[1].Box[0].Confidence, 0.9, 1.0);
+        Assert.InRange(detectObjectInScenesResults[1].Box[0].Dimensions.X, 30, 40);
+        Assert.InRange(detectObjectInScenesResults[1].Box[0].Dimensions.Y, 110, 120);
+        Assert.InRange(detectObjectInScenesResults[1].Box[0].Dimensions.Width, 280, 290);
+        Assert.InRange(detectObjectInScenesResults[1].Box[0].Dimensions.Height, 150, 160);
+
+        Assert.Equal("dog", detectObjectInScenesResults[1].Box[2].Label);
+        Assert.InRange(detectObjectInScenesResults[1].Box[2].Confidence, 0.4, 0.5);
+        Assert.InRange(detectObjectInScenesResults[1].Box[2].Dimensions.X, -5, 0);
+        Assert.InRange(detectObjectInScenesResults[1].Box[2].Dimensions.Y, 310, 320);
+        Assert.InRange(detectObjectInScenesResults[1].Box[2].Dimensions.Width, 90, 100);
+        Assert.InRange(detectObjectInScenesResults[1].Box[2].Dimensions.Height, 100, 110);
     }
 
     private static string GetExecutingPath()
