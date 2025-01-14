@@ -9,7 +9,6 @@ on:
       - main
 
 jobs:
-  
   build-and-test:
     runs-on: ubuntu-latest
 
@@ -24,34 +23,41 @@ jobs:
       - name: Install dependencies for System.Drawing
         run: sudo apt-get install -y libgdiplus
 
-      - name: Install dependencies
+      - name: Restore dependencies
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release --no-restore
 
-      - name: Test
-        run: dotnet test meryem.hamidialaoui.ObjectDetection.sln --no-build --verbosity normal
-  
-  
-  
-  
-  
+      - name: Run Tests
+        run: dotnet test meryem.hamidialaoui.ObjectDetection.sln --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx"
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: '**/*.trx'
+
   publish:
     runs-on: ubuntu-latest
     needs: build-and-test
 
     steps:
-      
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      # Étape 2 : Installer le SDK .NET
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: '8.0.x'
 
-      # Étape 3 : Publier le projet console en mode autonome
-      - name: Publish console app
+      - name: Install dependencies for System.Drawing
+        run: sudo apt-get install -y libgdiplus
+
+      - name: Publish Console App
         run: dotnet publish meryem.hamidialaoui.ObjectDetection.Console --configuration Release --output ./publish --self-contained --runtime win10-x64
+
+      - name: Upload Published Files
+        uses: actions/upload-artifact@v3
+        with:
+          name: published-app
+          path: ./publish
