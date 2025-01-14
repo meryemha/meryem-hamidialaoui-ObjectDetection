@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "meryem.hamidialaoui.ObjectDetection", "meryem.hamidialaoui.ObjectDetection\meryem.hamidialaoui.ObjectDetection.csproj", "{3E66058B-88F4-44B5-A94E-79D71F340998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "meryem.hamidialaoui.ObjectDetection.Tests", "meryem.hamidialaoui.ObjectDetection.Tests\meryem.hamidialaoui.ObjectDetection.Tests.csproj", "{A2C2CB9A-8F96-40CE-AD90-334D969FC90F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "meryem.hamidialaoui.ObjectDetection.WebApi", "meryem.hamidialaoui.ObjectDetection.WebApi\meryem.hamidialaoui.ObjectDetection.WebApi.csproj", "{EDB545E2-A0CA-4D67-85FD-336473980163}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E66058B-88F4-44B5-A94E-79D71F340998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E66058B-88F4-44B5-A94E-79D71F340998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E66058B-88F4-44B5-A94E-79D71F340998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E66058B-88F4-44B5-A94E-79D71F340998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C2CB9A-8F96-40CE-AD90-334D969FC90F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C2CB9A-8F96-40CE-AD90-334D969FC90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C2CB9A-8F96-40CE-AD90-334D969FC90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C2CB9A-8F96-40CE-AD90-334D969FC90F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB545E2-A0CA-4D67-85FD-336473980163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB545E2-A0CA-4D67-85FD-336473980163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB545E2-A0CA-4D67-85FD-336473980163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB545E2-A0CA-4D67-85FD-336473980163}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

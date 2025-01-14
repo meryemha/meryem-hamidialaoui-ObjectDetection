@@ -1,0 +1,6 @@
+@meryem.hamidialaoui.ObjectDetection.WebApi_HostAddress = http://localhost:5297
+
+GET {{meryem.hamidialaoui.ObjectDetection.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
