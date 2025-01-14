@@ -1,13 +1,13 @@
-﻿# Fichiers de build
+﻿# Ignore les fichiers .log
+*.log
+
+# Ignore les répertoires bin et obj
 bin/
 obj/
 
-# Fichiers de configuration utilisateur
-*.user
-*.suo
+# Ignore les fichiers temporaires
+*.tmp
+*.bak
 
-# Logs et caches
-*.log
-.vs/
-.idea/
-.vscode/
+# Ignore les fichiers ONNX (si vous ne voulez pas les inclure dans le dépôt)
+*.onnx
