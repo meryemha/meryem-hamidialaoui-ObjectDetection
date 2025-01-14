@@ -13,30 +13,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Étape 1 : Cloner le dépôt
       - uses: actions/checkout@v3
 
+      # Étape 2 : Installer le SDK .NET
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
+      # Étape 3 : Installer libgdiplus pour System.Drawing
       - name: Install dependencies for System.Drawing
         run: sudo apt-get install -y libgdiplus
 
+      # Étape 4 : Restaurer les dépendances
       - name: Restore dependencies
         run: dotnet restore
 
+      # Étape 5 : Construire le projet
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration Debug --no-restore
 
+      # Étape 6 : Vérifier que les fichiers nécessaires sont dans bin/Debug
       - name: List output files
         run: ls -R ./meryem.hamidialaoui.ObjectDetection.Tests/bin/Debug/net8.0
 
-      - name: Check libgdiplus
-        run: dpkg -l | grep libgdiplus
+      # Étape 7 : Exécuter les tests avec un logger pour voir les résultats
+      - name: Test
+        run: dotnet test meryem.hamidialaoui.ObjectDetection.sln --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx"
 
-      - name: Run Tests
-        run: dotnet test meryem.hamidialaoui.ObjectDetection.sln --no-build --verbosity normal --blame
+      # Étape 8 : Publier les résultats des tests dans GitHub Actions
+      - name: Publish Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test Results
+          path: meryem.hamidialaoui.ObjectDetection.Tests/TestResults/test-results.trx
 
   publish:
     runs-on: ubuntu-latest
