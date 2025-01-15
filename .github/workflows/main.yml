@@ -15,9 +15,15 @@ jobs:
         with:
           dotnet-version: '8.0.x'
       
-      # Install libgdiplus
+      # Install libgdiplus and other dependencies
       - name: Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y libgdiplus
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgdiplus libc6-dev
+      
+      # Export environment variable for System.Drawing
+      - name: Set environment variable for System.Drawing
+        run: echo "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1" >> $GITHUB_ENV
 
       - name: Restore dependencies
         run: dotnet restore meryem.hamidialaoui.ObjectDetection.sln
