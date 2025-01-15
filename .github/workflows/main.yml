@@ -14,15 +14,14 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
-      
-      # Install libgdiplus and other dependencies
-      - name: Install dependencies
+
+      - name: Install libgdiplus
         run: |
           sudo apt-get update
           sudo apt-get install -y libgdiplus libc6-dev
-      
-      # Export environment variable for System.Drawing
-      - name: Set environment variable for System.Drawing
+          sudo ln -s /usr/lib/libgdiplus.so /usr/lib/gdiplus.dll.so
+
+      - name: Set environment variables
         run: echo "DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1" >> $GITHUB_ENV
 
       - name: Restore dependencies
