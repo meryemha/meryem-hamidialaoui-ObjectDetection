@@ -1,12 +1,6 @@
-﻿name: .NET CI/CD Pipeline
+﻿name: .NET CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build-and-test:
@@ -20,6 +14,10 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
+      
+      # Install libgdiplus
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y libgdiplus
 
       - name: Restore dependencies
         run: dotnet restore meryem.hamidialaoui.ObjectDetection.sln
@@ -29,6 +27,7 @@ jobs:
 
       - name: Run tests
         run: dotnet test meryem.hamidialaoui.ObjectDetection.sln --verbosity normal
+
 
   publish:
     runs-on: ubuntu-latest
