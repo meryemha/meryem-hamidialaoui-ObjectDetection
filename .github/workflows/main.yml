@@ -13,30 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
-      - name: Install dependencies for System.Drawing
-        run: sudo apt-get install -y libgdiplus
-
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore meryem.hamidialaoui.ObjectDetection.sln
 
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
+      - name: Build solution
+        run: dotnet build meryem.hamidialaoui.ObjectDetection.sln --configuration Debug
 
-      - name: Run Tests
-        run: dotnet test meryem.hamidialaoui.ObjectDetection.sln --no-build --verbosity normal --logger "trx;LogFileName=test-results.trx"
-
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: '**/*.trx'
+      - name: Run tests
+        run: dotnet test meryem.hamidialaoui.ObjectDetection.sln --verbosity normal
 
   publish:
     runs-on: ubuntu-latest
